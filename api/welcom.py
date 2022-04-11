@@ -1,5 +1,5 @@
 from http.server import BaseHTTPRequestHandler
-
+from datetime import datetime
 
 class handler(BaseHTTPRequestHandler):
 
@@ -8,6 +8,7 @@ class handler(BaseHTTPRequestHandler):
     self.send_response(200)
     self.send_header('Content-type', 'text/plain')
     self.end_headers()
-    message = "Hello Amman python-401d8"
+    message = "welcom , to Our website"
     self.wfile.write(message.encode())
+    self.wfile.write(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')).encode())
     return
